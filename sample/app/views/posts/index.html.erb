@@ -1,0 +1,17 @@
+<div class="container text-center mt-5">
+        <a href="/posts/new" class="btn-square text-center">メモを作る</a>
+</div>
+
+<div class="container">
+    
+    <h1 class="mt-5">メモ一覧</h1>
+    
+    <ul class="list-group mt-3">
+        <% @posts.each do |post| %>
+            <li class="list-group-item">
+            <%= link_to(post.content,"/posts/#{post.id}") %>
+            </li>
+        <% end %>
+    </ul>
+    
+</div>

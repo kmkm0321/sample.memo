@@ -1,0 +1,7 @@
+<%= @user.name %>
+<%= @user.email %>
+<%= @user.password %>
+<% if @user.id == @login_user.id %>
+    <%= link_to("編集","/users/#{@user.id}/edit") %>
+    <%= link_to("削除","/users/#{@user.id}/destroy",{method: "post"}) %>
+<% end %>

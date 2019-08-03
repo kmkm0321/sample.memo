@@ -1,0 +1,3 @@
+<%= @data.content %>
+<%=link_to("編集","/posts/#{@data.id}/edit") %>
+<%=link_to("削除","/posts/#{@data.id}/destroy",{method:"post"}) %>

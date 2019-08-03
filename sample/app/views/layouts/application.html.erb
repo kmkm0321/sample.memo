@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Sample</title>
+    <%= csrf_meta_tags %>
+
+    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+  </head>
+
+  <body>
+    
+    <% if @login_user %>
+      
+      <nav class="navbar navbar-dark justify-content-end" style="background-color:#668ad8;">
+      <li class="nav-item ml-4"><%= link_to("My memo","/posts/index") %></li>
+      <li class="nav-item ml-4"><%= link_to("#{@login_user.name}でログイン中","/users/#{@login_user.id}") %></li>
+      <li class="nav-item ml-4"><%= link_to("ログアウト","/logout",{method: :post}) %></li>
+      </nav>
+      
+    <% else %>
+      
+      <nav class="navbar navbar-dark" style="background-color:#668ad8;">
+      <li class="nav-item"><%= link_to("Toppage","/home/top") %></li>
+      </nav>
+      
+    <% end %>
+    <%= yield %>
+  </body>
+</html>
